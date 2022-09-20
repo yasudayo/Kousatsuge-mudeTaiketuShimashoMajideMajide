@@ -1,0 +1,718 @@
+const scene = document.createElement('scene');
+document.body.appendChild(scene);
+const hb = document.getElementById('hajimeru');
+const mb = document.getElementById('mou');
+const title = document.getElementById('title');
+const subtitle = document.getElementById('subtitle');
+const meirei = document.getElementById('meirei');
+const three = document.getElementById('three');
+const four = document.getElementById('four');
+const blue = document.getElementById('blue');
+const red = document.getElementById('red');
+const yellow = document.getElementById('yellow');
+const green = document.getElementById('green');
+const text1 = document.getElementById('text1');
+const text2 = document.getElementById('text2');
+const text3 = document.getElementById('text3');
+const text4 = document.getElementById('text4');
+const ranb = document.getElementById('ran');
+const startb = document.getElementById('start');
+const container = document.getElementById('b');
+const container1 = document.getElementById('r');
+const container2 = document.getElementById('y');
+const table1 = document.getElementById('table1');
+
+
+
+let se = new Audio('決定.mp3');
+let se1 = new Audio('pati.mp3');
+let colors = 0;
+let MaxKoma = 0;
+let check = 0;
+
+title.innerText = "考察ゲームで対決しましょ\nマジでマジで";
+subtitle.innerText = "マジでマジでシリーズ2作品目";
+meirei.innerText = "何色で遊びますか";
+mb.style.display = 'none';
+three.style.display = 'none';
+four.style.display = 'none';
+meirei.style.display = 'none';
+blue.style.display = 'none';
+red.style.display = 'none';
+ranb.style.display = 'none';
+startb.style.display = 'none';
+yellow.style.display = 'none';
+green.style.display = 'none';
+text1.style.display = 'none';
+text2.style.display = 'none';
+text3.style.display = 'none';
+text4.style.display = 'none';
+container.style.display = 'none';
+container1.style.display = 'none';
+container2.style.display = 'none';
+table1.style.display = 'none';
+three.innerText = "3色";
+four.innerText = "ComingSoon";
+
+
+function hajimeru() {
+    se.play();
+    title.style.display = 'none';
+    subtitle.style.display = 'none';
+    hb.style.display = 'none';
+    three.style.display = 'block';
+    four.style.display = 'block';
+    meirei.style.display = 'block';
+}
+function threeS() {
+    se.play();
+    three.style.display = 'none';
+    four.style.display = 'none';
+    koma3()
+}
+function fourS() {
+    se.play();
+    three.style.display = 'none';
+    four.style.display = 'none';
+    koma4();
+}
+function koma3() {
+    meirei.innerText = "各コマの本数を決めてください";
+    blue.style.display = 'block';
+    red.style.display = 'block';
+    yellow.style.display = 'block';
+    ranb.style.display = 'block';
+    startb.style.display = 'block';
+    text1.style.display = 'block';
+    text2.style.display = 'block';
+    text3.style.display = 'block';
+    colors = 3;
+}
+function koma4() {
+    meirei.innerText = "各コマの本数を決めてください";
+    blue.style.display = 'block';
+    red.style.display = 'block';
+    yellow.style.display = 'block';
+    green.style.display = 'block';
+    ranb.style.display = 'block';
+    startb.style.display = 'block';
+    text1.style.display = 'block';
+    text2.style.display = 'block';
+    text3.style.display = 'block';
+    text4.style.display = 'block';
+    colors = 4;
+}
+function ran() {
+    if (colors === 3) {
+        blue.value = Math.floor(Math.random() * 10) + 1;
+        console.log(blue.value)
+        red.value = Math.floor(Math.random() * 10) + 1;
+        yellow.value = Math.floor(Math.random() * 10) + 1;
+    }
+    if (colors === 4) {
+        blue.value = Math.floor(Math.random() * 10) + 1;
+        console.log(blue.value)
+        red.value = Math.floor(Math.random() * 10) + 1;
+        yellow.value = Math.floor(Math.random() * 10) + 1;
+        green.value = Math.floor(Math.random() * 10) + 1;
+    }
+}
+function gamestart() {
+    se.play();
+    IshiSet();
+    text1.style.display = 'none';
+    text2.style.display = 'none';
+    text3.style.display = 'none';
+    text4.style.display = 'none';
+    blue.style.display = 'none';
+    red.style.display = 'none';
+    yellow.style.display = 'none';
+    green.style.display = 'none';
+    ranb.style.display = 'none';
+    startb.style.display = 'none';
+    container.style.display = 'block';
+    container1.style.display = 'block';
+    container2.style.display = 'block';
+    table1.style.display = 'block';
+}
+function IshiSet() {
+    if (colors === 3) {
+        //        b.style.display = 'block';
+        //        r.style.display = 'block';
+        //        y.style.display = 'block';
+
+        // DOM
+        //        container.innerHTML = '' //空にする
+        //        container1.innerHTML = ''
+        //        container2.innerHTML = ''
+
+        //        for (let i = 0; i < blue.value; i++) {
+        //        const img = document.createElement('img');
+        //        img.src = 'ao.png'
+        //        img.width = '51'
+        //        img.height = '108'
+        //        img.id = `ao${i + 1}`
+        //        container.appendChild(img)
+        //        }
+        //        for (let h = 0; h < red.value; h++) {
+        //        const img1 = document.createElement('img');
+        //        img1.src = 'aka.png'
+        //        img1.width = '51'
+        //        img1.height = '108'
+        //        img1.id = `aka${h + 1}`;
+        //        container1.appendChild(img1)
+        //        }
+        //        for (let j = 0; j < yellow.value; j++) {
+        //          const img2 = document.createElement('img');
+        //          img2.src = 'ki.png'
+        //          img2.width = '51'
+        //          img2.height = '108'
+        //          img2.id = `yellow${j + 1}`
+        //          container2.appendChild(img2)
+        //         }
+        //        }
+        //    }
+
+        // HTML
+        container.innerHTML = '<span></span>'
+        for (let i = 0; i < blue.value; i++) {
+            container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao${i + 1}" onclick="blue${i + 1}()">`
+        }
+        container1.innerHTML = '<span></span>'
+        for (let h = 0; h < red.value; h++) {
+            container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka${h + 1}" onclick="red${h + 1}()">`
+        }
+        container2.innerHTML = '<span></span>'
+        for (let j = 0; j < yellow.value; j++) {
+            container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki${j + 1}" onclick="yellow${j + 1}()">`
+        }
+        firstTurn()
+    }
+}
+function firstTurn() {
+    meirei.innerText = "1Pの番です";
+}
+function blue1() {
+    se1.play();
+    check++
+    container.innerHTML = '<span></span>'
+    for (let t = 0; t < blue.value; t++) {
+        container.innerHTML += `<img src="nasi.png" width="51" height="108" id="ao${t + 1}" onclick="blue${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です" &&  check !== 3) {
+        secondTurn()
+    } else if (meirei.innerText === "2Pの番です" &&  check !== 3) {
+        firstTurn();
+    }
+    if (meirei.innerText === "1Pの番です" &&  check === 3) {
+        alert("2Pの勝ち")
+        document.location.reload();
+    } else if (meirei.innerText === "2Pの番です" &&  check === 3) {
+        alert("1Pの勝ち")
+        document.location.reload();
+    }
+}
+function blue2() {
+    se1.play();
+    container.innerHTML = '<span></span>'
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue1()">`
+    for (let t = 1; t < blue.value; t++) {
+        container.innerHTML += `<img src="nasi.png" width="51" height="108" id="ao${t + 1}" onclick="blue${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function blue3() {
+    se1.play();
+    container.innerHTML = '<span></span>'
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue1()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue2()">`
+    for (let t = 2; t < blue.value; t++) {
+        container.innerHTML += `<img src="nasi.png" width="51" height="108" id="ao${t + 1}" onclick="blue${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function blue4() {
+    se1.play();
+    container.innerHTML = '<span></span>'
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue1()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue2()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue3()">`
+    for (let t = 3; t < blue.value; t++) {
+        container.innerHTML += `<img src="nasi.png" width="51" height="108" id="ao${t + 1}" onclick="blue${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function blue5() {
+    se1.play();
+    container.innerHTML = '<span></span>'
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue1()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue2()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue3()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue4()">`
+    for (let t = 4; t < blue.value; t++) {
+        container.innerHTML += `<img src="nasi.png" width="51" height="108" id="ao${t + 1}" onclick="blue${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function blue6() {
+    se1.play();
+    container.innerHTML = '<span></span>'
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue1()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue2()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue3()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue4()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue5()">`
+    for (let t = 5; t < blue.value; t++) {
+        container.innerHTML += `<img src="nasi.png" width="51" height="108" id="ao${t + 1}" onclick="blue${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function blue7() {
+    se1.play();
+    container.innerHTML = '<span></span>'
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue1()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue2()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue3()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue4()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue5()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue6()">`
+    for (let t = 6; t < blue.value; t++) {
+        container.innerHTML += `<img src="nasi.png" width="51" height="108" id="ao${t + 1}" onclick="blue${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function blue8() {
+    se1.play();
+    container.innerHTML = '<span></span>'
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue1()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue2()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue3()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue4()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue5()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue6()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue7()">`
+    for (let t = 7; t < blue.value; t++) {
+        container.innerHTML += `<img src="nasi.png" width="51" height="108" id="ao${t + 1}" onclick="blue${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function blue9() {
+    se1.play();
+    container.innerHTML = '<span></span>'
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue1()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue2()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue3()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue4()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue5()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue6()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue7()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue8()">`
+    for (let t = 8; t < blue.value; t++) {
+        container.innerHTML += `<img src="nasi.png" width="51" height="108" id="ao${t + 1}" onclick="blue${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function blue10() {
+    se1.play();
+    container.innerHTML = '<span></span>'
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue1()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue2()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue3()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue4()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue5()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue6()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue7()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue8()">`
+    container.innerHTML += `<img src="ao.png" width="51" height="108" id="ao1" onclick="blue9()">`
+    for (let t = 9; t < blue.value; t++) {
+        container.innerHTML += `<img src="nasi.png" width="51" height="108" id="ao${t + 1}" onclick="blue${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+
+function red1() {
+    se1.play();
+    check++
+    container1.innerHTML = '<span></span>'
+    for (let t = 0; t < blue.value; t++) {
+        container1.innerHTML += `<img src="nasi.png" width="51" height="108" id="aka${t + 1}" onclick="red${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です" &&  check !== 3) {
+        secondTurn()
+    } else if (meirei.innerText === "2Pの番です" &&  check !== 3) {
+        firstTurn();
+    }
+    if (meirei.innerText === "1Pの番です" &&  check === 3) {
+        alert("2Pの勝ち")
+        document.location.reload();
+    } else if (meirei.innerText === "2Pの番です" &&  check === 3) {
+        alert("1Pの勝ち")
+        document.location.reload();
+    }
+}
+function red2() {
+    se1.play();
+    container1.innerHTML = '<span></span>'
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red1()">`
+    for (let t = 1; t < red.value; t++) {
+        container1.innerHTML += `<img src="nasi.png" width="51" height="108" id="aka${t + 1}" onclick="red${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function red3() {
+    se1.play();
+    container1.innerHTML = '<span></span>'
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red1()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red2()">`
+    for (let t = 2; t < red.value; t++) {
+        container1.innerHTML += `<img src="nasi.png" width="51" height="108" id="aka${t + 1}" onclick="red${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function red4() {
+    se1.play();
+    container1.innerHTML = '<span></span>'
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red1()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red2()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red3()">`
+    for (let t = 3; t < red.value; t++) {
+        container1.innerHTML += `<img src="nasi.png" width="51" height="108" id="aka${t + 1}" onclick="red${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function red5() {
+    se1.play();
+    container1.innerHTML = '<span></span>'
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red1()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red2()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red3()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red4()">`
+    for (let t = 4; t < red.value; t++) {
+        container1.innerHTML += `<img src="nasi.png" width="51" height="108" id="aka${t + 1}" onclick="red${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function red6() {
+    se1.play();
+    container1.innerHTML = '<span></span>'
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red1()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red2()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red3()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red4()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red5()">`
+    for (let t = 5; t < red.value; t++) {
+        container1.innerHTML += `<img src="nasi.png" width="51" height="108" id="aka${t + 1}" onclick="red${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function red7() {
+    se1.play();
+    container1.innerHTML = '<span></span>'
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red1()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red2()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red3()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red4()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red5()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red6()">`
+    for (let t = 6; t < red.value; t++) {
+        container1.innerHTML += `<img src="nasi.png" width="51" height="108" id="aka${t + 1}" onclick="red${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function red8() {
+    se1.play();
+    container1.innerHTML = '<span></span>'
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red1()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red2()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red3()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red4()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red5()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red6()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red7()">`
+    for (let t = 7; t < red.value; t++) {
+        container1.innerHTML += `<img src="nasi.png" width="51" height="108" id="aka${t + 1}" onclick="red${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function red9() {
+    se1.play();
+    container1.innerHTML = '<span></span>'
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red1()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red2()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red3()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red4()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red5()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red6()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red7()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red8()">`
+    for (let t = 8; t < red.value; t++) {
+        container1.innerHTML += `<img src="nasi.png" width="51" height="108" id="aka${t + 1}" onclick="red${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function red10() {
+    se1.play();
+    container1.innerHTML = '<span></span>'
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red1()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red2()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red3()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red4()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red5()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red6()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red7()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red8()">`
+    container1.innerHTML += `<img src="aka.png" width="51" height="108" id="aka1" onclick="red9()">`
+    for (let t = 9; t < red.value; t++) {
+        container1.innerHTML += `<img src="nasi.png" width="51" height="108" id="aka${t + 1}" onclick="red${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function yellow1() {
+    se1.play();
+    check++
+    container2.innerHTML = '<span></span>'
+    for (let t = 0; t < red.value; t++) {
+        container2.innerHTML += `<img src="nasi.png" width="51" height="108" id="ki${t + 1}" onclick="yellow${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です" &&  check !== 3) {
+        secondTurn()
+    } else if (meirei.innerText === "2Pの番です" &&  check !== 3) {
+        firstTurn();
+    }
+    if (meirei.innerText === "1Pの番です" &&  check === 3) {
+        alert("2Pの勝ち")
+        document.location.reload();
+    } else if (meirei.innerText === "2Pの番です" &&  check === 3) {
+        alert("1Pの勝ち")
+        document.location.reload();
+    }
+}
+function yellow2() {
+    se1.play();
+    container2.innerHTML = '<span></span>'
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow1()">`
+    for (let t = 1; t < yellow.value; t++) {
+        container2.innerHTML += `<img src="nasi.png" width="51" height="108" id="ki${t + 1}" onclick="yellow${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function yellow3() {
+    se1.play();
+    container2.innerHTML = '<span></span>'
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow1()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow2()">`
+    for (let t = 2; t < yellow.value; t++) {
+        container2.innerHTML += `<img src="nasi.png" width="51" height="108" id="ki${t + 1}" onclick="yellow${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function yellow4() {
+    se1.play();
+    container2.innerHTML = '<span></span>'
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow1()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow2()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow3()">`
+    for (let t = 3; t < yellow.value; t++) {
+        container2.innerHTML += `<img src="nasi.png" width="51" height="108" id="ki${t + 1}" onclick="yellow${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function yellow5() {
+    se1.play();
+    container2.innerHTML = '<span></span>'
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow1()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow2()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow3()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow4()">`
+    for (let t = 4; t < yellow.value; t++) {
+        container2.innerHTML += `<img src="nasi.png" width="51" height="108" id="ki${t + 1}" onclick="yellow${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function yellow6() {
+    se1.play();
+    container2.innerHTML = '<span></span>'
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow1()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow2()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow3()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow4()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow5()">`
+    for (let t = 5; t < yellow.value; t++) {
+        container2.innerHTML += `<img src="nasi.png" width="51" height="108" id="ki${t + 1}" onclick="yellow${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function yellow7() {
+    se1.play();
+    container2.innerHTML = '<span></span>'
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow1()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow2()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow3()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow4()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow5()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow6()">`
+    for (let t = 6; t < yellow.value; t++) {
+        container2.innerHTML += `<img src="nasi.png" width="51" height="108" id="ki${t + 1}" onclick="yellow${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function yellow8() {
+    se1.play();
+    container2.innerHTML = '<span></span>'
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow1()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow2()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow3()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow4()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow5()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow6()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow7()">`
+    for (let t = 7; t < yellow.value; t++) {
+        container2.innerHTML += `<img src="nasi.png" width="51" height="108" id="ki${t + 1}" onclick="yellow${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function yellow9() {
+    se1.play();
+    container2.innerHTML = '<span></span>'
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow1()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow2()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow3()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow4()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow5()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow6()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow7()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow8()">`
+    for (let t = 8; t < yellow.value; t++) {
+        container2.innerHTML += `<img src="nasi.png" width="51" height="108" id="ki${t + 1}" onclick="yellow${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+function yellow10() {
+    se1.play();
+    container2.innerHTML = '<span></span>'
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow1()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow2()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow3()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow4()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow5()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow6()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow7()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow8()">`
+    container2.innerHTML += `<img src="ki.png" width="51" height="108" id="ki1" onclick="yellow9()">`
+    for (let t = 9; t < yellow.value; t++) {
+        container2.innerHTML += `<img src="nasi.png" width="51" height="108" id="ki${t + 1}" onclick="yellow${t + 1}()">`
+    }
+    if (meirei.innerText === "1Pの番です") {
+        secondTurn()
+    } else {
+        firstTurn();
+    }
+}
+
+function secondTurn() {
+    meirei.innerText = "2Pの番です";
+}
